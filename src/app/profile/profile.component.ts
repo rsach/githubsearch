@@ -9,7 +9,7 @@ export class ProfileComponent implements OnInit {
 	repos=[];
 	username:string;
   constructor(private _githubService:GithubService) { 
-  		this.user=false;
+  		this.user=null;
   }
 
   ngOnInit() {
@@ -17,7 +17,7 @@ export class ProfileComponent implements OnInit {
 
 
   searchUser(){
-  	this.user=false;
+  	this.user=null;
   	this._githubService.updateUser(this.username);
 
   	this._githubService.getUser().subscribe(user =>{
